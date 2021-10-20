@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Activities from './components/Activity/Activities';
+import Events from './components/Event/Event';
+import Place from './components/Place/Place';
+import Home from './components/Home/Home';
+// import useSelect from './apiHooks/useSelect';
 
-function App() {
+export default function App() {
+  // useSelect('activities');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/activities' component={Activities} />
+          <Route path='/events' component={Events} />
+          <Route path='/places' component={Place} />
+        </Switch>
+      </Router>
     </div>
   );
 }
-
-export default App;
