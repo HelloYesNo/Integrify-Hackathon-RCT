@@ -11,6 +11,7 @@ export default function Activities() {
   return (
     <div>
       <h1>Here is the activity </h1>
+<<<<<<< HEAD
       <div className='max-w-4xl mx-auto grid grid-cols-3 gap-y-6 gap-x-14'>
         {needed_data.data.length > 0 &&
           needed_data.data.map((item, key) => (
@@ -23,6 +24,17 @@ export default function Activities() {
             />
           ))}
       </div>
+=======
+      {needed_data.data.length > 0 &&
+        needed_data.data.map((item) => (
+          <DataCards
+            name={item.name.en}
+            url={item.info_url}
+            location={item.location.address.street_address}
+            // images={item.description.images[0].url}
+          />
+        ))}
+>>>>>>> ea4dc8b838e61fbdec96ba56cd4fb039c8ca0840
     </div>
   );
 }
