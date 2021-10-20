@@ -1,16 +1,23 @@
 import React from 'react';
 
 export default function DataCards(data) {
-  const { images, name, url, location, date } = data;
+  const { images, name, url, location, city, date } = data;
+  const maps = `https://www.google.com/maps/place/${location}, ${city}`;
 
   // console.log('images', images);
   return (
-    <div className='absolut flex flex-col w-full max-w-md px-4 py-8 m-5 ring-1 ring-gray-400 bg-white rounded-3xl shadow-lg'>
-      <h1 className='self-center mb-6 text-xl'>{name}</h1>
-      <h1 className='self-center mb-6 text-xl'>{date}</h1>
-      <h1 className='self-center mb-6 text-xl'>{url}</h1>
-      <h1 className='self-center mb-6 text-xl'>{location}</h1>
-      <h1 className='self-center mb-6 text-xl'>{images}</h1>
+    <div className='rounded-2xl overflow-hidden shadow-lg'>
+      <img className='w-full' alt={name} src={images} />
+      <div className='px-6 py-4'>
+        <h1 className='self-center mb-6 text-xl'>{name}</h1>
+        <h1 className='self-center mb-6 text-xl'>{date}</h1>
+        <a className='self-center mb-6 text-xl' href={url}>
+          Website
+        </a>
+        <a className='self-center mb-6 text-xl' href={maps}>
+          {location}, {city}
+        </a>
+      </div>
     </div>
   );
 }
