@@ -25,6 +25,6 @@ export default function useSelect(name) {
       }
     }
     init();
-  }, [baseUrl]);
+  }, [name]);
   return { data, loading, error };
 }

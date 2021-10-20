@@ -17,7 +17,7 @@ export default function Activities() {
             name={item.name.en}
             url={item.info_url}
             location={item.location.address.street_address}
-            ges={item.description.images[0].url}
+            // images={item.description.images[0].url}
           />
         ))}
     </div>
