@@ -8,6 +8,8 @@ export default function DataCards(data) {
       <h1 className='self-center mb-6 text-xl'>{name}</h1>
       <h1 className='self-center mb-6 text-xl'>{date}</h1>
       <h1 className='self-center mb-6 text-xl'>{url}</h1>
+      <h1 className='self-center mb-6 text-xl'>{location}</h1>
+      <h1 className='self-center mb-6 text-xl'>{images}</h1>
     </div>
   );
 }

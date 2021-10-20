@@ -8,15 +8,18 @@ export default function Activities() {
   if (loading) return loading;
   if (error) throw error;
 
-  // if (needed_data.data){
-  //   needed_data.data.map((item)=> { return  item.name.en})
-
-  // }
   return (
     <div>
       <h1>Here is the activity </h1>
       {needed_data.data.length > 0 &&
-        needed_data.data.map((item) => <DataCards name={item.name.en} />)}
+        needed_data.data.map((item) => (
+          <DataCards
+            name={item.name.en}
+            url={item.info_url}
+            location={item.location.address.street_address}
+            ges={item.description.images[0].url}
+          />
+        ))}
     </div>
   );
 }
