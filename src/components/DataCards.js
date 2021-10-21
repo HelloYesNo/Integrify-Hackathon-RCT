@@ -4,12 +4,14 @@ import { useState } from 'react';
 export default function DataCards(data) {
   const { images, name, url, location, city, date } = data;
   const maps = `https://www.google.com/maps/place/${location}, ${city}`;
-  const [intNum, setInt] = useState(0);
-  const [goNum, setGo] = useState(0);
+  let randNumInt = Math.floor(Math.random() * 10 + 1);
+  let randNumGo = Math.floor(Math.random() * 10 + 1);
+  let inum = randNumInt;
+  let gnum = randNumGo;
+  const [intNum, setInt] = useState(inum);
+  const [goNum, setGo] = useState(gnum);
   const [voteInt, setVoteInt] = useState(false);
   const [voteGo, setVoteGo] = useState(false);
-  let inum = 0;
-  let gnum = 0;
   let border1 = voteInt
     ? {
         borderColor: 'red',
@@ -24,20 +26,13 @@ export default function DataCards(data) {
     : {};
   const interested = () => {
     setVoteInt(!voteInt);
-    if (voteInt) {
-      inum = 0;
-    } else {
-      inum = 1;
-    }
+    inum += 1;
     setInt(inum);
   };
+
   const going = () => {
     setVoteGo(!voteGo);
-    if (voteGo) {
-      gnum = 0;
-    } else {
-      gnum = 1;
-    }
+    gnum += 1;
     setGo(gnum);
   };
 
