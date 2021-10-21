@@ -12,13 +12,13 @@ export default function Place() {
 			<h1 className="text-5xl text-center p-3 my-5">Places</h1>
 			<div className="max-w-7xl mx-auto grid grid-cols-3 gap-y-6 gap-x-14">
 				{needed_data.data.length > 0 &&
-					needed_data.data.map((item) => {
+					needed_data.data.map((item, i) => {
 						let imageExists = item.description.images && item.description.images[0] ? true : false;
 						if (imageExists === false) return <></>;
 						else {
 							return (
 								<DataCards
-									key={item.id}
+									key={i}
 									name={item.name.en}
 									url={item.info_url}
 									location={item.location.address.street_address}
