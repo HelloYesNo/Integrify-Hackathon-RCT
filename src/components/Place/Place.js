@@ -3,7 +3,7 @@ import useSelect from "../../apiHooks/useSelect";
 import DataCards from "../DataCards";
 
 export default function Place() {
-	const { data: needed_data, error, loading } = useSelect("places");
+	const { data: needed_data, error, loading } = useSelect('places');
 	if (loading) return loading;
 	if (error) throw error;
 
