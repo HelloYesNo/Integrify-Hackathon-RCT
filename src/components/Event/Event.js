@@ -6,9 +6,6 @@ export default function Event() {
   const { data: needed_data, error, loading } = useSelect('events');
   if (loading) return loading;
   if (error) throw error;
-
-  if (error) throw error;
-
   return (
     <div>
       <h1 className='text-5xl text-center p-3 my-5'>Events</h1>
