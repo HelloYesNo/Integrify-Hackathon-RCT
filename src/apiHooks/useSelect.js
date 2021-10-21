@@ -5,8 +5,6 @@ export default function useSelect(name) {
 	let baseUrl = `https://open-api.myhelsinki.fi/v1/${name}/`;
 
 	const [data, setData] = useState();
-	console.log("Data here", data);
-
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
 

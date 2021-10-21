@@ -48,9 +48,11 @@ export default function DataCards(data) {
 			<div className="px-6 py-4">
 				<h1 className="self-center mb-6 text-xl">{name}</h1>
 				<h1 className="self-center mb-6 text-xl">{date}</h1>
+				<div>
 				<a className="self-center mb-6 text-xl" href={url}>
 					Website
 				</a>
+				</div>
 				<a className="self-center mb-6 text-xl" href={maps}>
 					{location}, {city}
 				</a>
