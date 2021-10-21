@@ -4,7 +4,6 @@ import DataCards from "../DataCards";
 
 export default function Place() {
 	const { data: needed_data, error, loading } = useSelect("places");
-	console.log("Data from activities", needed_data);
 	if (loading) return loading;
 	if (error) throw error;
 
@@ -14,7 +13,7 @@ export default function Place() {
 			<div className="max-w-7xl mx-auto grid grid-cols-3 gap-y-6 gap-x-14">
 				{needed_data.data.length > 0 &&
 					needed_data.data.map((item) => {
-						let imageExists = item.description.images ? true : false;
+						let imageExists = item.description.images && item.description.images[0] ? true : false;
 						if (imageExists === false) return <></>;
 						else {
 							return (
@@ -23,7 +22,7 @@ export default function Place() {
 									name={item.name.en}
 									url={item.info_url}
 									location={item.location.address.street_address}
-									city={item.location.address.locality}
+                  city={item.location.address.locality}
 									images={item.description.images[0]?.url}
 								/>
 							);

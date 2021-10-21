@@ -1,5 +1,4 @@
 import React from 'react';
-import DataCards from '../DataCards';
 
 export default function Home() {
   return (

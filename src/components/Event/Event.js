@@ -4,7 +4,6 @@ import DataCards from "../DataCards";
 
 export default function Event() {
 	const { data: needed_data, error, loading } = useSelect("events");
-	console.log("Data from activities", needed_data);
 	if (loading) return loading;
 	if (error) throw error;
 

@@ -7,10 +7,8 @@ import Events from './components/Event/Event';
 import Place from './components/Place/Place';
 import Home from './components/Home/Home';
 import Footer from './components/Footer';
-// import useSelect from './apiHooks/useSelect';
 
 export default function App() {
-  // useSelect('activities');
   return (
     <div>
       <Router>

@@ -4,7 +4,6 @@ import DataCards from '../DataCards';
 
 export default function Activities() {
   const { data: needed_data, error, loading } = useSelect('activities');
-  console.log('Data from activities', needed_data);
   if (loading) return loading;
   if (error) throw error;
 
@@ -47,6 +46,7 @@ export default function Activities() {
           ))}
       </div>
     </div>
+
   );
 }
 
